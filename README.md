@@ -1,5 +1,4 @@
 # InsightHR-Attrition-and-Analytics-Dashboard
-# HR Analytics & Attrition Dashboard with Power BI: A Comprehensive Guide
 
 a powerful HR analytics and attrition dashboard. This dashboard will enable you to analyze key HR KPIs such as Employee Count, Salary, Gender Ratio, and attrition patterns, helping you identify high-risk areas and uncover factors driving employee turnover. We will cover best practices for dashboard design, including selecting the right visualizations, filters, and metrics, and making the dashboard interactive, clear, and informative.
 
