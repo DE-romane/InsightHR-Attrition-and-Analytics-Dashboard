@@ -20,13 +20,18 @@ a powerful HR analytics and attrition dashboard. This dashboard will enable you 
 ## Objective and Business Requirement
 
 ### The Objective of the HR Dashboard
-Before diving into the data, it’s crucial to align with your organization’s HR goals. Identify the specific questions your dashboard aims to answer. What insights are HR professionals seeking to understand employee attrition?
+Before diving into the data, it’s crucial to align with organization’s HR goals. Identify the specific questions my dashboard aims to answer. What insights are HR professionals seeking to understand employee attrition?
 
 ### Business Problem
-- **Composition of the Workforce**: Analyze workforce composition by department, education field, business travel frequency, gender, job role, and age group.
-- **HR KPIs**: Examine employee count, average salary, average monthly salary, average age, average salary hike, job satisfaction scores, and gender ratio.
-- **Trends and Patterns**: Identify trends in employee data across different parameters like Education, Age group, and Department.
-- **Attrition Analysis**: Identify factors influencing employee turnover and retention, such as salary, age, gender, education, and demographics. Gain insights into high attrition areas to inform targeted retention strategies.
+- **Composition of the Workforce:** Understand the composition of the workforce by department, education field, business travel frequency, gender, job role, and age group.
+- **HR KPIs:** Analyze employee count, average salary, average monthly salary, average age, average salary hike, average Job satisfaction score, and gender ratio.
+- **Identify trends and patterns** in employee data across different parameters like Education, Age group, and Department.
+- Analyze different HR KPIs for different Job roles.
+- Show the impact of Age & Department on Salary.
+- **Employee Attrition Analysis:** Identify the factors that influence employee turnover and retention, such as salary, age, gender, education, and employee demographics (e.g., age, marital status, work-life balance).
+- Gain insights into areas with high attrition rates to inform targeted retention strategies.
+- Analyze the attrition rate by various parameters including business travel, job satisfaction, marital status, work-life balance, monthly income, and age.
+- Compare the attrition rates in different departments such as Sales, R&D, and HR.
 
 ## Import and Explore the HR Data Set
 
@@ -40,22 +45,17 @@ The HR data set, a CSV file with information about 1470 employees (age, gender, 
 Use the Data view and Model view in Power BI to examine the data, perform data cleaning, transformation, and validation using the Power Query Editor.
 
 - **Data Examination**:
-  - Check rows, columns, names, and data types.
-  - Analyze numerical variables (range, mean, median, mode, standard deviation, distribution).
-  - Analyze categorical variables (frequency, percentage, proportion).
-  - Handle missing, invalid, or inconsistent values.
-  - Identify and decide on outliers or anomalies.
-  - Visualize correlations or relationships using charts or graphs.
+- Check the number of rows and columns in the data set and their names and data types.
+- Check the range, mean, median, mode, standard deviation, and distribution of the numerical variables, such as age, salary, satisfaction, etc.
+- Check the frequency, percentage, and proportion of the categorical variables, such as gender, department, job role, attrition, etc.
+- Check for any missing, invalid, or inconsistent values in the data set and handle them appropriately.
+- Check for any outliers or anomalies in the data set and decide whether to keep them or remove them.
+- Check for any correlations or relationships between the variables and visualize them using charts or graphs.
 
 ## Create a Data Model and Relationships
 
 ### Data Model
-In our case, we have a single table. However, if multiple tables were involved, create relationships based on common columns (e.g., department column for HR and department tables).
-
-### Creating Relationships
-1. Drag and drop the common column from one table to the matching column in the other table in the Relationships view.
-2. Adjust relationship properties (granularity, cardinality, direction).
-3. Save the relationship.
+In our case, we have a single table. which is the HR data set. Therefore, we do not need to create any relationships between tables.
 
 ## Define Key Performance Indicators (KPIs) and DAX Measures
 
