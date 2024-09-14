@@ -51,11 +51,15 @@ Use the Data view and Model view in Power BI to examine the data, perform data c
 - Check for any missing, invalid, or inconsistent values in the data set and handle them appropriately.
 - Check for any outliers or anomalies in the data set and decide whether to keep them or remove them.
 - Check for any correlations or relationships between the variables and visualize them using charts or graphs.
+![Data-View1](https://github.com/user-attachments/assets/08236661-861f-40f9-ba49-f9efd3ff2682)
 
 ## Create a Data Model and Relationships
 
 ### Data Model
-In our case, we have a single table. which is the HR data set. Therefore, we do not need to create any relationships between tables.
+We currently have a single table, **HR_Analytics**, and we’ve just added a new table, **Department**, which contains department names. This will be used later for filtering purposes.
+
+![Screenshot_2](https://github.com/user-attachments/assets/66f8cccd-15ff-4f8a-8f38-dd633edbf645)
+![Screenshot_1](https://github.com/user-attachments/assets/c9062b21-d8fc-4b49-9ee3-916517416f44)
 
 ## Define Key Performance Indicators (KPIs) and DAX Measures
 
@@ -79,19 +83,22 @@ Attrition Count = CALCULATE([Employee Count], HR_Analytics[Attrition]="Yes")
 // Measure to Calculate Attrition Rate
 Attrition Rate = DIVIDE([Attrition Count], CALCULATE([Employee Count], ALL(HR_Analytics[Attrition])), 0)
 
-// Measure for Attrition Target
+// Measure for Attrition Target (constant value)
 Attrition Target = 0.2
 
 // Measure to Calculate Average Age
 Average Age = AVERAGE(HR_Analytics[Age])
 
-// Measure to Calculate Average Job Satisfaction
+// Measure to Calculate Average Job Satisfaction (rated on a scale from 1 to 4) indicates the level of satisfaction employees have with their work.
 Average Job Satisfaction = AVERAGE(HR_Analytics[JobSatisfaction])
+
+// Measure to Calculate Monthly Salary
+Monthly Salary = SUM(HR_Analytics[MonthlyIncome])
 
 // Measure to Calculate Average Monthly Salary
 Average Salary = [Monthly Salary]/[Employee Count]
 
-// Measure to Calculate Average Salary Hike
+// Measure to Calculate Average Salary Hike => raise in an employee's salary percentage of their current salary
 Average Salary Hike = AVERAGE(HR_Analytics[PercentSalaryHike])
 
 // Measure to Calculate Average Years at Company
@@ -100,15 +107,13 @@ Average Years = AVERAGE(HR_Analytics[YearsAtCompany])
 // Measure to Calculate Employee Count
 Employee Count = DISTINCTCOUNT(HR_Analytics[EmpID])
 
-// Measure to Calculate Gender Ratio
+// Measure to Calculate Gender Ratio (Female / male)
 Gender Ratio = DIVIDE(
     CALCULATE([Employee Count], HR_Analytics[Gender] = "Female"),
     CALCULATE([Employee Count], HR_Analytics[Gender] = "Male"),
     0
 )
 
-// Measure to Calculate Monthly Salary
-Monthly Salary = SUM(HR_Analytics[MonthlyIncome])
 ```
 
 ## Design the Dashboard Layout and Visualizations
@@ -153,7 +158,7 @@ Use the Visualizations pane and Fields pane to enhance user interaction and dash
 - **Age Group Distribution**: Majority in the 26-35 (490) and 36-45 (425) age groups.
 - **Job Roles**: Largest roles are Sales Executives (269) and Research Scientists (245).
 - **Highest Salaries**: Drawn by Managers ($17,201) and Research Directors ($15,947).
-- **Gender Ratio**: Skewed towards one gender at 68%.
+- **Gender Ratio**: Skewed towards one gender(male) at 68%.
 - **Attrition Details**: Total attrition count of 237 with a rate of 16%. High attrition in Sales (21%), R&D (19%), and HR (14%). Highest attrition among Sales Representatives (40%), Laboratory Technicians (24%), and HR Specialists (23%).
 - **Business Travel Impact**: Higher attrition (25%) for frequent travelers compared to those who rarely travel (8%).
 - **Job Satisfaction**: Higher attrition (23%) among dissatisfied employees.
